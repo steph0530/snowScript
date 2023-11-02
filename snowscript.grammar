@@ -1,0 +1,21 @@
+program 
+    -> var_assignment
+    | number
+
+var_assignment -> identifier "->" number
+| identifier "->" identifier
+
+identifier -> [a-z]:+
+
+number -> digits "." digits
+| digits
+
+digits -> [0-9]:+
+
+expression -> 
+    number "+" number   
+    | number "-" number
+    | number "*" number
+    | number "/" number
+
+ifStatement -> "if" condition "then" statement "else" statement "endif"
